@@ -1,18 +1,19 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import CategoryCard from '../components/pageComp/categoryCard'
+
 import ModalAlert from '../components/ModalAlert'
 import CreateCategory from './CreateCategory'
 import { toggleModal } from '../store/slices/pageActionSlice'
 import { deleteCategoryData } from '../store/slices/categorySlice'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import CategoryCard from '../components/pageComp/CategoryCard'
 
 const Categories = () => {
   const { categories, selectId, isCategoryLoad } = useSelector(state => state.category)
   const {products} = useSelector(state => state.product)
   const { modalType, showModal } = useSelector(state => state.pageAction)
-  const categoryUrl = "http://localhost:3000/categories"
+  const categoryUrl = "https://online-shop-db-i7by.onrender.com/categories"
   const dispatch = useDispatch()
    function deleteCategory(id) {
     dispatch(deleteCategoryData({ categoryUrl, id, products }))
