@@ -27,7 +27,7 @@ const CreateProduct = ({ baseData}) => {
     return str;
   }
 
-  const productUrl = "http://localhost:3000/products"
+  const productUrl = "https://online-shop-db-i7by.onrender.com/products"
 
   function productUpdated(productUrl, id, updateData) {
     dispatch(updateProductData({ productUrl, id, updateData }))
